@@ -23,6 +23,7 @@ public class ListRedisService {
      */
     public Long rPush(String[] values) {
         return redisTemplate.opsForList().rightPushAll(KEY, values);
+        
     }
 
     /**

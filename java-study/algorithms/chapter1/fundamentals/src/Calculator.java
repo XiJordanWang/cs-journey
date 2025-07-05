@@ -7,7 +7,6 @@ public class Calculator {
         for (int score : scores) {
             sum += score;
         }
-
         System.out.println("avg = " + sum / scores.length);
     }
 }

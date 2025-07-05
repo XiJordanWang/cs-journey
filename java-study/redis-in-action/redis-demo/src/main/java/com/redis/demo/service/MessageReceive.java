@@ -9,5 +9,6 @@ public class MessageReceive {
 
     public void getMessage(String object) {
         log.info(object);
+        
     }
 }

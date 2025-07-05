@@ -23,6 +23,7 @@ public class StringRedisService {
      */
     public String get() {
         return stringRedisTemplate.opsForValue().get(KEY);
+        
     }
 
     /**

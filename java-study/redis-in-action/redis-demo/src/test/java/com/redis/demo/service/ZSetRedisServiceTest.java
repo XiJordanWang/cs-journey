@@ -14,7 +14,6 @@ import java.util.*;
 @Slf4j
 @SpringBootTest
 public class ZSetRedisServiceTest {
-
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 

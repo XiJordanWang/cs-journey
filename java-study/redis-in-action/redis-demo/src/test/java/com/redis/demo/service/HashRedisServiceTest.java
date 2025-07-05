@@ -14,7 +14,6 @@ import java.util.Map;
 @Slf4j
 @SpringBootTest
 public class HashRedisServiceTest {
-
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 

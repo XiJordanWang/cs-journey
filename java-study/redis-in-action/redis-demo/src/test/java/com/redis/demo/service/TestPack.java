@@ -11,7 +11,6 @@ class TestPack {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
-
     @Test
     void publishTestChannel() {
         for (int i = 1; i <= 10; i++) {

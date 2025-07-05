@@ -8,7 +8,6 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @ToString

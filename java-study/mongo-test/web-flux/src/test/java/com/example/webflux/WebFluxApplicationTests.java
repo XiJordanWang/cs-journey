@@ -8,6 +8,7 @@ class WebFluxApplicationTests {
 
 	@Test
 	void contextLoads() {
-	}
+	
+	}	
 
 }

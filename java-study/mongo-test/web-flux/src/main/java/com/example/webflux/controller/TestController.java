@@ -17,7 +17,6 @@ public class TestController {
     @Autowired
     private AssetRepository assetRepository;
 
-
     @GetMapping
     public Mono<ResponseEntity<Void>> hello() {
         return Mono.create(item -> {

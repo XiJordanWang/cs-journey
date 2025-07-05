@@ -3,3 +3,4 @@ spring:
     url: r2dbc:pool:mysql://localhost/iac
     username: postgres
     password: 123456
+    

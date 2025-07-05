@@ -11,7 +11,6 @@ import java.util.Set;
 @Slf4j
 @SpringBootTest
 class SetRedisServiceTest {
-
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 

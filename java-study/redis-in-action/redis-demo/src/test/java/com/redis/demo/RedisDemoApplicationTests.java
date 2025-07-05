@@ -10,7 +10,6 @@ import javax.annotation.Resource;
 
 @SpringBootTest
 class RedisDemoApplicationTests {
-
     @Test
     void contextLoads() {
     }

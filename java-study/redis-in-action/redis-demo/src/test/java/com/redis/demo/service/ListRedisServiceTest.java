@@ -15,7 +15,6 @@ class ListRedisServiceTest {
 
     @Resource
     private ListRedisService listRedisService;
-
     @Test
     @DisplayName("Command Lists")
     void command() {

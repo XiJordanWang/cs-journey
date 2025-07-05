@@ -14,7 +14,6 @@ class StringRedisServiceTest {
 
     @Resource
     private StringRedisService service;
-
     @Test
     void testNumber() {
         service.add("10");
