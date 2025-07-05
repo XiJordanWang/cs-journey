@@ -13,4 +13,5 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 public class IngredientUDT {
     private final String name;
     private final Ingredient.Type type;
+    
 }

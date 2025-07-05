@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface OrganizationRepository extends CrudRepository<Organization, String> {
     Optional<Organization> findById(String organizationId);
+    
 }

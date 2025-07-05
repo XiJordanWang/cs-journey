@@ -16,4 +16,5 @@ public class RouterFunctionConfig {
         return route(GET("/hello"), request -> ok().body(just("Hello World!"), String.class))
                 .andRoute(GET("/bye"), request -> ok().body(just("See ya!"), String.class));
     }
+    
 }

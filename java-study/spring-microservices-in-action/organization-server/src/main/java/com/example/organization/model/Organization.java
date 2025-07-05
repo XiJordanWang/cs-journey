@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "organizations")
 public class Organization {
+    
     @Id
     @Column(name = "organization_id", nullable = false)
     String id;

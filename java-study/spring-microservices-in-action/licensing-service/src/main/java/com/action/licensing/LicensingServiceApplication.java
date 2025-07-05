@@ -11,7 +11,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 public class LicensingServiceApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(LicensingServiceApplication.class, args);
     }

@@ -9,5 +9,4 @@ public class WebfluxDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(WebfluxDemoApplication.class, args);
     }
-
 }

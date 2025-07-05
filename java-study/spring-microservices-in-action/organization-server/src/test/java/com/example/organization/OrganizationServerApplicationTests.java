@@ -8,6 +8,7 @@ class OrganizationServerApplicationTests {
 
     @Test
     void contextLoads() {
+        
     }
 
 }

@@ -8,6 +8,7 @@ class WebfluxDemoApplicationTests {
 
     @Test
     void contextLoads() {
+    
     }
 
 }

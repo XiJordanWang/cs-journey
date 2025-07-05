@@ -11,5 +11,4 @@ public class OrganizationServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(OrganizationServerApplication.class, args);
     }
-
 }

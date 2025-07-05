@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Service
 public class OrganizationService {
-
     @Autowired
     private OrganizationRepository orgRepository;
 

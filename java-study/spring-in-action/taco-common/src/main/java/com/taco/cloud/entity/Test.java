@@ -19,4 +19,5 @@ public class Test {
         int pwwkew = solution.lengthOfLongestSubstring("abcabcbb");
         System.out.println("pwwkew = " + pwwkew);
     }
+    
 }

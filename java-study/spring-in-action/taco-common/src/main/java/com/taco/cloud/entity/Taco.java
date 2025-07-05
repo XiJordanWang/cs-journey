@@ -24,6 +24,7 @@ public class Taco {
     @PrimaryKeyColumn(type = PrimaryKeyType.CLUSTERED, ordering = Ordering.DESCENDING)
     private Date createdAt = new Date();
 
+
     @Column("ingredients")
     private List<IngredientUDT> ingredients;
 

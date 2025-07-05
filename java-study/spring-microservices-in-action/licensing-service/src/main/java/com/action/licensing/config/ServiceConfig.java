@@ -10,5 +10,6 @@ public class ServiceConfig {
 
     public String getExampleProperty() {
         return exampleProperty;
+        
     }
 }

@@ -9,4 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface OrganizationFeignClient {
     @GetMapping(value = "/v1/organizations/{organizationId}", consumes = "application/json")
     Organization getOrganization(@PathVariable("organizationId") String organizationId);
+    
 }

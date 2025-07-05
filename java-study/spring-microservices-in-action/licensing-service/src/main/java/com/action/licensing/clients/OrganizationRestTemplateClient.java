@@ -19,7 +19,6 @@ public class OrganizationRestTemplateClient {
                         "http://ORGANIZATIONSERVICE/v1/organizations/{organizationId}",
                         HttpMethod.GET,
                         null, Organization.class, organizationId);
-
         return restExchange.getBody();
     }
 }

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IngredientRepository extends ReactiveCassandraRepository<Ingredient, String> {
+    
 }
