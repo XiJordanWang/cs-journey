@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 @Service
 public class KafkaOrderMessagingService implements OrderMessagingService {
 
+
     @Resource
     private KafkaTemplate<String, String> kafkaTemplate;
 

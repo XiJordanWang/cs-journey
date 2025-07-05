@@ -8,4 +8,5 @@ import org.springframework.messaging.handler.annotation.Header;
 public interface FileWriterGateway {
 
     void writeToFile(@Header(FileHeaders.FILENAME) String filename, String data);
+    
 }

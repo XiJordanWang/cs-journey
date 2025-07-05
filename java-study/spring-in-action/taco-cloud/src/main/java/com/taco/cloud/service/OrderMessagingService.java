@@ -7,5 +7,5 @@ public interface OrderMessagingService {
 
     void sendMessage(TacoOrder order);
 
-//    TacoOrder receiveOrder() throws JMSException;
+   TacoOrder receiveOrder() throws JMSException;
 }

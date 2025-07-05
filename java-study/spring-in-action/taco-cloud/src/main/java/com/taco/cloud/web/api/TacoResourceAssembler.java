@@ -24,4 +24,5 @@ public class TacoResourceAssembler extends RepresentationModelAssemblerSupport<T
     public TacoResource toModel(Taco entity) {
         return createModelWithId(entity.getId(), entity);
     }
+    
 }

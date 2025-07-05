@@ -26,4 +26,5 @@ public class TacoResource extends RepresentationModel<TacoResource> {
         this.createdAt = taco.getCreatedAt();
         this.ingredients = taco.getIngredients();
     }
+    
 }
