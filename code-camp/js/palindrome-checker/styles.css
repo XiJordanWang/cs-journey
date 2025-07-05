@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+    font-family: Verdana,sans-serif;
+    background-color: black;
+    color: white;
+  }
+  
+  button{
+    background-color: purple;
+    color: white;
+  }

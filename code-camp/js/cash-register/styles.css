@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+#cash {
+    width: 80%;
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+#purchase-btn {
+    margin-top: 20px;
+    font-size: 1.5em;
+    background-color: purple;
+    color: white;
+    margin: 20px;
+}
