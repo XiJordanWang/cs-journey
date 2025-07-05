@@ -8,6 +8,7 @@ class ServiceIngredientApplicationTests {
 
     @Test
     void contextLoads() {
+        
     }
 
 }

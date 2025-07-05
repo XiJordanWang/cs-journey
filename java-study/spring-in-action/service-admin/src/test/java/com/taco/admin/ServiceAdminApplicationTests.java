@@ -8,7 +8,6 @@ import java.text.DecimalFormat;
 
 @SpringBootTest
 class ServiceAdminApplicationTests {
-
     @Test
     void contextLoads() {
         BigDecimal bigDecimal = new BigDecimal("3333.2222");

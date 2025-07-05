@@ -44,5 +44,6 @@ public class LogAspect {
             value = myLog.value();
         }
         log.info(new Date()+"-----"+value);
+        
     }
 }

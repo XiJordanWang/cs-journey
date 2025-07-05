@@ -8,6 +8,7 @@ class ServiceRegistryApplicationTests {
 
     @Test
     void contextLoads() {
+        
     }
 
 }

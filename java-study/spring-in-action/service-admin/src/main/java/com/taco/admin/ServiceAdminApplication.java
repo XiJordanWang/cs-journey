@@ -10,6 +10,7 @@ public class ServiceAdminApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ServiceAdminApplication.class, args);
+        
     }
 
 }

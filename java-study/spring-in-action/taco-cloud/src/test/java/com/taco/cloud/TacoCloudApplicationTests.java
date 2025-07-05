@@ -20,11 +20,11 @@ class TacoCloudApplicationTests {
         TacoOrder tacoOrder = TacoOrder.builder().ccNumber("1111").build();
         rabbitOrderMessagingService.sendMessage(tacoOrder);
 
-//        try {
-//            TacoOrder tacoOrder = service.receiveOrder();
-//            log.info("tacoOrder:{}", tacoOrder);
-//        } catch (JMSException e) {
-//            e.printStackTrace();
-//        }
+       try {
+           TacoOrder tacoOrder = service.receiveOrder();
+           log.info("tacoOrder:{}", tacoOrder);
+       } catch (JMSException e) {
+           e.printStackTrace();
+       }
     }
 }

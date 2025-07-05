@@ -44,6 +44,7 @@ public class RedisConfig {
         return redisMessageListenerContainer;
     }
 
+
     @Bean
     public MessageListenerAdapter listenerAdapter1(MessageReceive messageReceive) {
         return new MessageListenerAdapter(messageReceive, "getMessage");
