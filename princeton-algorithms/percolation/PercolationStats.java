@@ -15,8 +15,8 @@ public class PercolationStats {
             Percolation percolation = new Percolation(n);
 
             while (!percolation.percolates()) {
-                int row = StdRandom.uniformInt(n);
-                int col = StdRandom.uniformInt(n);
+                int row = StdRandom.uniformInt(n) + 1;
+                int col = StdRandom.uniformInt(n) + 1;
                 percolation.open(row, col);
             }
 
@@ -47,9 +47,9 @@ public class PercolationStats {
     // test client (see below)
     public static void main(String[] args) {
         PercolationStats stats = new PercolationStats(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
-        StdOut.printf("mean                    = %.6f\\n", stats.mean());
-        StdOut.printf("stddev                    = %.6f\\n", stats.stddev());
-        StdOut.printf("95%% confidence interval = [%.6f, %.6f]\\n", stats.confidenceLo(), stats.confidenceHi());
+        StdOut.printf("mean = %.6f\n", stats.mean());
+        StdOut.printf("stddev = %.6f\n", stats.stddev());
+        StdOut.printf("95%% confidence interval = [%.6f, %.6f]\n", stats.confidenceLo(), stats.confidenceHi());
     }
 
     private void catchArgumentException(int n, int trials) {
