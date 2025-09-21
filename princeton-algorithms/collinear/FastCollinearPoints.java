@@ -9,72 +9,62 @@ public class FastCollinearPoints {
 
     private final ArrayList<LineSegment> segmentsList = new ArrayList<>();
 
-    /**
-     * finds all line segments containing 4 or more points
-     *
-     * @param points
-     */
     public FastCollinearPoints(Point[] points) {
-        if (points == null) throw new IllegalArgumentException("The argument cannot be null!");
-        for (Point point : points) {
+        if (points == null) throw new IllegalArgumentException("Point array is null");
+
+        for (Point p : points) {
+            if (p == null) throw new IllegalArgumentException("Point is null");
+        }
+
+        Point[] checkDuplicate = points.clone();
+        Arrays.sort(checkDuplicate);
+        for (int i = 1; i < checkDuplicate.length; i++) {
+            if (checkDuplicate[i].compareTo(checkDuplicate[i - 1]) == 0) {
+                throw new IllegalArgumentException("Duplicate points detected");
+            }
+        }
+
+        int n = points.length;
+
+        for (Point origin : points) {
             Point[] sortedPoints = points.clone();
-            Arrays.sort(sortedPoints, point.slopeOrder());
+            Arrays.sort(sortedPoints, origin.slopeOrder());
 
-            ArrayList<Point> collinearPoints = new ArrayList<>();
-            collinearPoints.add(point);
+            int start = 1;
+            while (start < n) {
+                ArrayList<Point> collinearPoints = new ArrayList<>();
+                double slopeRef = origin.slopeTo(sortedPoints[start]);
+                collinearPoints.add(origin);
+                collinearPoints.add(sortedPoints[start]);
+                int end = start + 1;
 
-            double prevSlope = Double.NaN;
-            int count = 1;
+                while (end < n && Double.compare(origin.slopeTo(sortedPoints[end]), slopeRef) == 0) {
+                    collinearPoints.add(sortedPoints[end]);
+                    end++;
+                }
 
-            for (int i = 1; i < sortedPoints.length; i++) {
-                double slope = point.slopeTo(sortedPoints[i]);
-                if (i == 1 || Double.compare(slope, prevSlope) == 0) {
-                    collinearPoints.add(sortedPoints[i]);
-                    count++;
-                } else {
-                    if (count >= 4) { // 至少4个点
-                        Point[] linePoints = collinearPoints.toArray(new Point[0]);
-                        Arrays.sort(linePoints);
+                if (collinearPoints.size() >= 4) {
+                    Point[] linePoints = collinearPoints.toArray(new Point[0]);
+                    Arrays.sort(linePoints);
+                    if (origin.compareTo(linePoints[0]) == 0) {
                         segmentsList.add(new LineSegment(linePoints[0], linePoints[linePoints.length - 1]));
                     }
-                    collinearPoints.clear();
-                    collinearPoints.add(point);
-                    collinearPoints.add(sortedPoints[i]);
-                    count = 2;
                 }
-                prevSlope = slope;
-            }
 
-            if (count >= 4) {
-                Point[] linePoints = collinearPoints.toArray(new Point[0]);
-                Arrays.sort(linePoints);
-                segmentsList.add(new LineSegment(linePoints[0], linePoints[linePoints.length - 1]));
+                start = end;
             }
         }
     }
 
-
-    /**
-     * the number of line segments
-     *
-     * @return
-     */
     public int numberOfSegments() {
         return segmentsList.size();
     }
 
-    /**
-     * the line segments
-     *
-     * @return
-     */
     public LineSegment[] segments() {
         return segmentsList.toArray(new LineSegment[0]);
     }
 
     public static void main(String[] args) {
-
-        // read the n points from a file
         In in = new In(args[0]);
         int n = in.readInt();
         Point[] points = new Point[n];
@@ -84,7 +74,6 @@ public class FastCollinearPoints {
             points[i] = new Point(x, y);
         }
 
-        // draw the points
         StdDraw.enableDoubleBuffering();
         StdDraw.setXscale(0, 32768);
         StdDraw.setYscale(0, 32768);
@@ -93,7 +82,6 @@ public class FastCollinearPoints {
         }
         StdDraw.show();
 
-        // print and draw the line segments
         FastCollinearPoints collinear = new FastCollinearPoints(points);
         for (LineSegment segment : collinear.segments()) {
             StdOut.println(segment);

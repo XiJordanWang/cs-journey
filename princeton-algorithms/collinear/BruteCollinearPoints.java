@@ -16,17 +16,27 @@ public class BruteCollinearPoints {
      */
     public BruteCollinearPoints(Point[] points) {
         if (points == null) throw new IllegalArgumentException("The argument cannot be null!");
-        int N = points.length;
+        int n = points.length;
+        for (Point p : points) {
+            if (p == null)
+                throw new IllegalArgumentException("Point cannot be null");
+        }
+        Point[] pointsCopy = points.clone();
+        Arrays.sort(pointsCopy);
+        for (int i = 1; i < pointsCopy.length; i++) {
+            if (pointsCopy[i].compareTo(pointsCopy[i - 1]) == 0)
+                throw new IllegalArgumentException("Duplicate points detected");
+        }
 
-        for (int i = 0; i < N - 3; i++) {
-            for (int j = i + 1; j < N - 2; j++) {
-                for (int k = j + 1; k < N - 1; k++) {
-                    for (int l = k + 1; l < N; l++) {
+        for (int i = 0; i < n - 3; i++) {
+            for (int j = i + 1; j < n - 2; j++) {
+                for (int k = j + 1; k < n - 1; k++) {
+                    for (int z = k + 1; z < n; z++) {
                         double slope1 = points[i].slopeTo(points[j]);
                         double slope2 = points[i].slopeTo(points[k]);
-                        double slope3 = points[i].slopeTo(points[l]);
+                        double slope3 = points[i].slopeTo(points[z]);
                         if (slope1 == slope2 && slope2 == slope3) {
-                            Point[] linePoints = {points[i], points[j], points[k], points[l]};
+                            Point[] linePoints = {points[i], points[j], points[k], points[z]};
                             Arrays.sort(linePoints);
                             segmentsList.add(new LineSegment(linePoints[0], linePoints[3]));
                         }
