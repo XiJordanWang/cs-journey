@@ -1,9 +1,12 @@
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import static com.google.common.truth.Truth.assertThat;
 
-/** Tests by Brendan Hu, Spring 2015, revised for 2016 by Josh Hug and for 2023 by Noah Adhikari */
+/**
+ * Tests by Brendan Hu, Spring 2015, revised for 2016 by Josh Hug and for 2023 by Noah Adhikari
+ */
 public class TestBSTMap {
 
     @Test
@@ -23,7 +26,7 @@ public class TestBSTMap {
     public void sanityClearTest() {
         BSTMap<String, Integer> b = new BSTMap<>();
         for (int i = 0; i < 455; i++) {
-            b.put("hi" + i, 1+i);
+            b.put("hi" + i, 1 + i);
             //make sure put is working via containsKey and get
             assertThat(b.get("hi" + i)).isEqualTo(1 + i);
             assertThat(b.containsKey("hi" + i)).isTrue();
@@ -114,4 +117,35 @@ public class TestBSTMap {
         assertThat(b.get("b")).isEqualTo("provolone");
     }
 
+    @Test
+    public void personalizedTest() {
+        BSTMap<String, String> map = new BSTMap<>();
+        map.put("b", "b");
+        map.put("a", "a");
+        map.put("c", "c");
+
+        map.printInOrder();
+        System.out.println("map size= " + map.size());
+
+        map.clear();
+
+        map.printInOrder();
+        System.out.println("map size= " + map.size());
+
+        map.put("1", "a");
+        map.put("2", "b");
+        map.put("3", "c");
+        map.put("4", "d");
+        map.put("5", "e");
+        map.put("6", "f");
+        map.put("7", "g");
+        map.put("8", "h");
+
+        map.printInOrder();
+        System.out.println("map size= " + map.size());
+
+        System.out.println("map.get(\"8\") = " + map.get("8"));
+        System.out.println("map.containsKey(\"5\") = " + map.containsKey("5"));
+        System.out.println("map.containsKey(\"10\") = " + map.containsKey("10"));
+    }
 }
